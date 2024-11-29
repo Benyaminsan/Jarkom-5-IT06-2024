@@ -12,3 +12,6 @@ IP Prefix untuk IT06
 
 | IT06 | 192.236 |
 |----|----|
+
+# Misi 1: Memetakan Kota New Eridu
+![WhatsApp Image 2024-11-30 at 00 34 21_ad765985](https://github.com/user-attachments/assets/9d1971dc-1ee9-47e4-978b-05df8e661ad3)
