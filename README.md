@@ -20,7 +20,7 @@ Keterangan:
 - HDD: Berfungsi sebagai DNS Server.
 - Fairy: Berfungsi sebagai DHCP Server.
 - Web Servers: HIA, HollowZero.
-- Client:
+Client:
 - Burnice: Memiliki 5 host.
 - Lycaon: Memiliki 20 host.
 - Policeboo: Memiliki 30 host.
@@ -29,9 +29,182 @@ Keterangan:
 - Jane: Memiliki 200 host.
 
 2. Setelah membagi alamat IP menggunakan VLSM, gambarkan pohon subnet yang menunjukkan hierarki pembagian IP di jaringan New Eridu. Lingkari subnet-subnet yang akan dilewati dalam jaringan.
-Gambar Rute:
+- Gambar Rute:
 ![RUTE FIX](https://github.com/user-attachments/assets/925ab161-8bff-4a33-8075-caaab7189d68)
-Pembagian Rute: https://docs.google.com/spreadsheets/d/1zI3OmMxX0yAr5VX4vVDV8RhfkD-QKsDZj-OfU2oCOCw/edit?gid=671499381#gid=671499381
-Gambar Tree:
+- Pembagian Rute: [SPREADSHEET](https://docs.google.com/spreadsheets/d/1zI3OmMxX0yAr5VX4vVDV8RhfkD-QKsDZj-OfU2oCOCw/edit?gid=671499381#gid=671499381)
+- Gambar Tree:
 3. Setelah pembagian IP selesai, buatlah konfigurasi rute untuk menghubungkan semua subnet dengan benar di jaringan New Eridu. Pastikan perangkat dapat saling terhubung.
+# Network Configuration
 
+- NewEridu
+```
+# NAT
+auto eth0
+iface eth0 inet dhcp
+
+# A1
+auto eth1
+iface eth1 inet static
+    address 192.236.0.1
+    netmask 255.255.255.252
+
+# A5
+auto eth2
+iface eth2 inet static
+    address 192.236.2.1
+    netmask 255.255.255.252
+```
+
+- LuminaSquare
+```
+# A1
+auto eth0
+iface eth0 inet static
+    address 192.236.0.2
+    netmask 255.255.255.252
+    gateway 192.236.0.1
+
+# A2
+auto eth1
+iface eth1 inet static
+    address 192.236.0.5
+    netmask 255.255.255.0
+
+# A4
+auto eth2
+iface eth2 inet static
+    address 192.236.1.9
+    netmask 255.255.255.128
+```
+- BalletTwins
+```
+# A2
+auto eth0
+iface eth0 inet static
+    address 192.236.0.6
+    netmask 255.255.255.0
+    gateway 192.236.0.5
+
+# A3
+auto eth1
+iface eth1 inet static
+    address 192.236.1.1
+    netmask 255.255.255.248
+```
+- SixStreet
+```
+# A5
+auto eth0
+iface eth0 inet static
+    address 192.236.2.2
+    netmask 255.255.255.252
+    gateway 192.236.2.1
+
+# A6
+auto eth1
+iface eth1 inet static
+    address 192.236.2.5
+    netmask 255.255.255.248
+
+# A9
+auto eth2
+iface eth2 inet static
+    address 192.236.3.65
+    netmask 255.255.255.252
+```    
+- Victoria
+```
+# A4
+auto eth0
+iface eth0 inet static
+    address 192.236.1.10
+    netmask 255.255.255.128
+    gateway 192.236.1.9
+
+# A8
+auto eth1
+iface eth1 inet static
+    address 192.236.3.1
+    netmask 255.255.255.192
+```    
+- HollowZero
+```
+# A9
+auto eth0
+iface eth0 inet static
+    address 192.236.3.66
+    netmask 255.255.255.252
+    gateway 192.236.3.65
+ ```   
+- Fairy (DHCP Server)
+```
+# A6
+auto eth0
+iface eth0 inet static
+    address 192.236.2.6
+    netmask 255.255.255.248
+    gateway 192.236.2.5
+```    
+- HDD (DNS Server)
+```
+# A6
+auto eth0
+iface eth0 inet static
+    address 192.236.2.7
+    netmask 255.255.255.248
+    gateway 192.236.2.5
+```    
+- Burnice
+```
+# A8
+auto eth0
+iface eth0 inet static
+    address 192.236.3.2
+    netmask 255.255.255.192
+    gateway 192.236.3.1
+ ```   
+- Caesar
+```
+# A8
+auto eth0
+iface eth0 inet static
+    address 192.236.3.3
+    netmask 255.255.255.192
+    gateway 192.236.3.1
+```    
+- Ellen
+```
+# A4
+auto eth0
+iface eth0 inet static
+    address 192.236.1.11
+    netmask 255.255.255.128
+    gateway 192.236.1.9
+```    
+- Lycaon
+```
+# A4
+auto eth0
+iface eth0 inet static
+    address 192.236.1.12
+    netmask 255.255.255.128
+    gateway 192.236.1.9
+ ```   
+- Jane
+```
+# A2
+auto eth0
+iface eth0 inet static
+    address 192.236.0.7
+    netmask 255.255.255.0
+    gateway 192.236.0.5
+```    
+- -Policeboo
+```
+# A2
+auto eth0
+iface eth0 inet static
+    address 192.236.0.8
+    netmask 255.255.255.0
+    gateway 192.236.0.5
+```
