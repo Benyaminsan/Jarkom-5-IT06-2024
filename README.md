@@ -29,7 +29,6 @@ Keterangan:
 - Jane: Memiliki 200 host.
 
 2. Setelah membagi alamat IP menggunakan VLSM, gambarkan pohon subnet yang menunjukkan hierarki pembagian IP di jaringan New Eridu. Lingkari subnet-subnet yang akan dilewati dalam jaringan.
-![RUTE](https://github.com/user-attachments/assets/22a4df56-e99f-4887-af7d-51d6ac6ec20e)
-
+![RUTE FIX](https://github.com/user-attachments/assets/925ab161-8bff-4a33-8075-caaab7189d68)
 3. Setelah pembagian IP selesai, buatlah konfigurasi rute untuk menghubungkan semua subnet dengan benar di jaringan New Eridu. Pastikan perangkat dapat saling terhubung.
 
