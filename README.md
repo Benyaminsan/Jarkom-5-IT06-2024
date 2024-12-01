@@ -112,21 +112,6 @@ iface eth2 inet static
     address 192.236.3.65
     netmask 255.255.255.252
 ```    
-- Victoria
-```
-# A4
-auto eth0
-iface eth0 inet static
-    address 192.236.1.10
-    netmask 255.255.255.128
-    gateway 192.236.1.9
-
-# A8
-auto eth1
-iface eth1 inet static
-    address 192.236.3.1
-    netmask 255.255.255.192
-```    
 - HollowZero
 ```
 # A9
