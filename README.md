@@ -158,53 +158,62 @@ iface eth0 inet static
 ```
 # A8
 auto eth0
-iface eth0 inet static
-    address 192.236.3.2
-    netmask 255.255.255.192
-    gateway 192.236.3.1
+iface eth0 inet dhcp
  ```   
 - Caesar
 ```
 # A8
 auto eth0
-iface eth0 inet static
-    address 192.236.3.3
-    netmask 255.255.255.192
-    gateway 192.236.3.1
+iface eth0 inet dhcp
 ```    
 - Ellen
 ```
 # A4
 auto eth0
-iface eth0 inet static
-    address 192.236.1.11
-    netmask 255.255.255.128
-    gateway 192.236.1.9
+iface eth0 inet sdhcp
 ```    
 - Lycaon
 ```
 # A4
 auto eth0
-iface eth0 inet static
-    address 192.236.1.12
-    netmask 255.255.255.128
-    gateway 192.236.1.9
+iface eth0 inet dhcp
  ```   
 - Jane
 ```
 # A2
 auto eth0
-iface eth0 inet static
-    address 192.236.0.7
-    netmask 255.255.255.0
-    gateway 192.236.0.5
+iface eth0 inet dhcp
 ```    
-- -Policeboo
+- Policeboo
 ```
 # A2
 auto eth0
+iface eth0 inet dhcp
+```
+- HIA
+```
+# A3
+auto eth0
 iface eth0 inet static
-    address 192.236.0.8
-    netmask 255.255.255.0
-    gateway 192.236.0.5
+    address 192.236.1.2
+    netmask 255.255.255.248
+    gateway 192.236.1.1
+```
+- ScootOutpost
+```
+# A9
+auto eth0
+iface eth0 inet static
+    address 192.236.3.66
+    netmask 255.255.255.252
+    gateway 192.236.3.65
+```
+- OuterRing
+```
+# A7
+auto eth0
+iface eth0 inet static
+    address 192.236.2.13
+    netmask 255.255.255.248
+    gateway 192.236.2.12
 ```
