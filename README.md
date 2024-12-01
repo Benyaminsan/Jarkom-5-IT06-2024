@@ -202,3 +202,32 @@ iface eth0 inet static
     netmask 255.255.255.248
     gateway 192.236.2.12
 ```
+
+# Routing + Bashrc
+- NewEridu
+```
+# A2: Route to LuminaSquare > BalletTwins > PubSec > Policeboo > Jane
+route add -net 192.236.0.4 netmask 255.255.255.0 gw 192.236.0.2
+
+# A3: Route to BalletTwins > HIA
+route add -net 192.236.1.0 netmask 255.255.255.248 gw 192.236.0.2
+
+# A4: Route to BalletTwins > Victoria > Lycaon > Ellen
+route add -net 192.236.1.8 netmask 255.255.255.128 gw 192.236.0.2
+
+# A6: Route to SixStreet > HDD > Fairy
+route add -net 192.236.2.4 netmask 255.255.255.248 gw 192.236.2.2
+
+# A7: Route to SixStreet > Metro > ScootOutpost > OuterRing
+route add -net 192.236.2.12 netmask 255.255.255.248 gw 192.236.2.2
+
+# A8: Route to SixStreet > Metro > OuterRing > SoC > Burnice > Caeser
+route add -net 192.236.3.0 netmask 255.255.255.192 gw 192.236.2.2
+
+# A9: Route to SixStreet > Metro > ScootOutpost > HollowZero
+route add -net 192.236.3.64 netmask 255.255.255.252 gw 192.236.2.2
+
+# Enable NAT for external network access
+IP_ETH0=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
+iptables -t nat -A POSTROUTING -o eth0 -j SNAT --to-source $IP_ETH0
+```
